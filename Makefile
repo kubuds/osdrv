@@ -192,10 +192,16 @@ wiegand-gpio:
 gyro_i2c:
 	@$(call MAKE_EXT_KO, extdrv/${@})
 
+v4l2loopback:
+	@$(call MAKE_EXT_KO, extdrv/${@})
+
 cp_ext_wireless:
 	@find extdrv/wireless -name '*.ko' -print -exec cp {} $(INSTALL_DIR)/3rd/ \;
 
 cp_ext_tp:
+	@find extdrv/tp -name '*.ko' -print -exec cp {} $(INSTALL_DIR)/3rd/ \;
+
+cp_ext_v4l2lb:
 	@find extdrv/tp -name '*.ko' -print -exec cp {} $(INSTALL_DIR)/3rd/ \;
 
 clean:
